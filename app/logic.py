@@ -2,7 +2,7 @@
 import random
 import re
 
-import trolldata
+from app import data
 
 
 def get_random_one(alist):
@@ -34,37 +34,37 @@ def get_random_some_joined(alist, amount):
 
 
 def generate_first_question():
-	return get_random_one(trolldata.first_questions)
+	return get_random_one(data.first_questions)
 
 
 def generate_middle_question():
-	return get_random_one(trolldata.middle_questions)
+	return get_random_one(data.middle_questions)
 
 
 def generate_last_questions():
-	return get_random_some_joined(trolldata.last_questions, random.randint(1,3))
+	return get_random_some_joined(data.last_questions, random.randint(1,3))
 
 
 def generate_first_ofence():
-	return get_random_one(trolldata.first_ofenses)
+	return get_random_one(data.first_ofenses)
 
 
 def generate_first_sentence(subject):
 	content = {
 		'subject': subject,
-		'object': get_random_one(trolldata.generic_singular_objects)
+		'object': get_random_one(data.generic_singular_objects)
 	}
 	return "The %(subject)s is %(object)s." % content
 
 
 def generate_second_sentence(subject):
 	content = {
-		'starter': get_random_one(trolldata.second_sentence_starters),
-		'adjectives': get_random_some_joined(trolldata.generic_adjectives, random.randint(0,2)),
+		'starter': get_random_one(data.second_sentence_starters),
+		'adjectives': get_random_some_joined(data.generic_adjectives, random.randint(0,2)),
 		'subject': subject,
-		'subject_descriptor': get_random_one_or_not(trolldata.generic_subject_descriptors),
-		'verb': get_random_one(trolldata.generic_singular_verbs),
-		'object': get_random_one(trolldata.generic_singular_objects),
+		'subject_descriptor': get_random_one_or_not(data.generic_subject_descriptors),
+		'verb': get_random_one(data.generic_singular_verbs),
+		'object': get_random_one(data.generic_singular_objects),
 		'punctuation': "!" if random.randint(1,3)==1 else ".",
 	}
 	sentence = "%(starter)s the %(adjectives)s %(subject)s " \
@@ -76,7 +76,7 @@ def generate_second_sentence(subject):
 
 def generate_conector_sentence(subject):
 	content = {
-		'like': get_random_one(trolldata.generic_comparisons),
+		'like': get_random_one(data.generic_comparisons),
 		'subject': subject,
 	}
 	sentence = "%(like)s %(subject)s." % content
@@ -92,20 +92,20 @@ def generate_conector_sentence(subject):
 def generate_confusing_sentence(subject):
 	content = {
 		'subject': subject,
-		'adjective': get_random_one(trolldata.weird_adjectives),
+		'adjective': get_random_one(data.weird_adjectives),
 	}
-	sentence_format = get_random_one(trolldata.confusing_sentence_formats)
+	sentence_format = get_random_one(data.confusing_sentence_formats)
 	sentence = sentence_format % content
 	sentence = sentence[0].upper() + sentence[1:] # uppercase first letter
 	return sentence
 
 
 def generate_after_confusion_sentence():
-	return get_random_one(trolldata.after_confusion_sentences)
+	return get_random_one(data.after_confusion_sentences)
 
 
 def generate_response(subject=None):
-	subjects = get_random_some(trolldata.generic_singular_subjects, 2)
+	subjects = get_random_some(data.generic_singular_subjects, 2)
 	subject1 = subjects[0] if subject is None else subject
 	subject2 = subjects[1]
 	content = {

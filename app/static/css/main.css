@@ -1,0 +1,25 @@
+
+@import url(http://fonts.googleapis.com/css?family=Kavoon);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body {
+	background-color: #EFEDDF;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header {
+	padding-top: 10px;
+	background-color: #EF7247;
+	color: white;
+	text-align: center;
+	padding-bottom: 30px;
+	margin-bottom: 20px;
+}
+.header h1 {
+	font-family: Kavoon, Arial, sans-serif;
+}
+
+.troll-text {
+	color: #4E3F35;
+	font-size: 16px;
+}

@@ -1,3 +1,8 @@
 
 + DONE Text generator done
 + DONE Flask hello world and dev server
++ DONE Flask working with trollero
+- TODO Heroku ready
+- TODO Ajax gets new reply, may input a subject
+- TODO Footer and credits
+- TODO Github fork me banner
