@@ -104,7 +104,7 @@ def generate_after_confusion_sentence():
 	return get_random_one(data.after_confusion_sentences)
 
 
-def generate_response(subject=None):
+def generate_text(subject=None):
 	subjects = get_random_some(data.generic_singular_subjects, 2)
 	subject1 = subjects[0] if subject is None else subject
 	subject2 = subjects[1]

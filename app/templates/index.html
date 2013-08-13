@@ -8,7 +8,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3">
-				<p class="troll-text">{{ reply_text }}</p>
+				<div class="centered">
+					<input type="text" id="subject" class="form-control subject input-lg" placeholder="subject (e.g. 'stuff you mention')">
+					<a type="submit" href="#" id="generate" class="btn btn-lg btn-default generate">Generate</a>
+				</div>
+				<p id="troll-text" class="troll-text">{{ troll_text }}</p>
 			</div>
 		</div>
 	</div>

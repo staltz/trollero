@@ -13,14 +13,31 @@ body {
 	background-color: #EF7247;
 	color: white;
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
 .header h1 {
 	font-family: Kavoon, Arial, sans-serif;
 }
-
+.centered {
+	text-align: center;
+}
+a.generate {
+	margin-bottom: 10px;
+}
+input.subject {
+	width: 320px;
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
 .troll-text {
 	color: #4E3F35;
 	font-size: 16px;
+	padding: 10px;
+	border: 1px solid #4E3F35;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
 }
