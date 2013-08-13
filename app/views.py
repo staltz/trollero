@@ -12,4 +12,10 @@ def index():
 
 @app.route('/_get_text')
 def get_troll_text():
-	return generate_text(request.args.get('subject'))
+	subject = request.args.get('subject')
+	# Clean the string
+	if isinstance(subject, basestring):
+		subject = subject.strip()
+		if len(subject) <= 0:
+			subject = None
+	return generate_text(subject)
